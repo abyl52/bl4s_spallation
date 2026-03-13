@@ -1,29 +1,20 @@
 #include "PrimaryGeneratorAction.hh"
-
-
 #include "G4ParticleGun.hh"
-#include "G4Neutron.hh"
+#include "G4Proton.hh" 
 #include "G4SystemOfUnits.hh"
 #include "G4Event.hh"
-
 
 PrimaryGeneratorAction::PrimaryGeneratorAction()
 : G4VUserPrimaryGeneratorAction(),
   fParticleGun(nullptr)
 {
-    
     fParticleGun = new G4ParticleGun(1);
 
     
-    fParticleGun->SetParticleDefinition(G4Neutron::NeutronDefinition());
-    
+    fParticleGun->SetParticleDefinition(G4Proton::ProtonDefinition());
     
     fParticleGun->SetParticleEnergy(1.0 * GeV);
-    
-    
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
-    
-    
     fParticleGun->SetParticlePosition(G4ThreeVector(0., 0., -40.*cm));
 }
 
@@ -31,8 +22,6 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction() {
     delete fParticleGun;
 }
 
-
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent) {
-    
     fParticleGun->GeneratePrimaryVertex(anEvent);
 }

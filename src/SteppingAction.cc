@@ -9,6 +9,7 @@ SteppingAction::~SteppingAction() {}
 
 void SteppingAction::UserSteppingAction(const G4Step* step) {
    
+   
     if (step->GetTrack()->GetDefinition() != G4Neutron::NeutronDefinition()) return;
 
     G4StepPoint* prePoint = step->GetPreStepPoint();
@@ -17,15 +18,12 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     
     if (postPoint->GetStepStatus() == fGeomBoundary) {
         
-        
         if (prePoint->GetPhysicalVolume()->GetName() == "Target") {
-            
             
             G4double energy = step->GetTrack()->GetKineticEnergy();
             
             
-            if (energy >= 50.0 * MeV) {
-                
+            if (energy >= 0.0 * MeV) {
                 
                 G4double angle = step->GetTrack()->GetMomentumDirection().theta();
                 G4AnalysisManager::Instance()->FillH1(0, angle / deg);

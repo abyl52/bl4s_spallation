@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/bl4s_sim.dir/link.d"
   "CMakeFiles/bl4s_sim.dir/main.cc.o"
   "CMakeFiles/bl4s_sim.dir/main.cc.o.d"
   "CMakeFiles/bl4s_sim.dir/src/ActionInitialization.cc.o"

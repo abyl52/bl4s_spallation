@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/acer/bl4s_spallation/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
