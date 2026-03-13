@@ -1,0 +1,3 @@
+/home/acer/bl4s_spallation/build/CMakeFiles/bl4s_sim.dir
+/home/acer/bl4s_spallation/build/CMakeFiles/edit_cache.dir
+/home/acer/bl4s_spallation/build/CMakeFiles/rebuild_cache.dir

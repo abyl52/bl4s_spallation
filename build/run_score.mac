@@ -1,0 +1,27 @@
+
+/run/initialize
+
+
+/vis/open OGL
+/vis/drawVolume
+# /vis/scene/add/trajectories smooth
+/vis/scene/endOfEventAction accumulate
+
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/set neutron yellow
+/vis/viewer/set/lineWidth 2
+
+
+
+
+/score/create/cylinderMesh myDetector
+/score/mesh/cylinderSize 15. 30. cm
+/score/mesh/nBin 1 1 1
+/score/quantity/energyDeposit totalEnergy MeV
+/score/close
+
+
+/run/beamOn 1000
+
+
+/score/dumpQuantityToFile myDetector totalEnergy HEA_energy_results.csv
